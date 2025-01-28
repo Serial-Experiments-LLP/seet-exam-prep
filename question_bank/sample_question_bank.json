@@ -1,0 +1,48 @@
+[
+    {
+        "question": "What is the primary function of AWS Identity and Access Management (IAM)?",
+        "choices": [
+            "To manage AWS billing and costs",
+            "To provide secure access control to AWS resources",
+            "To ensure high availability of AWS services",
+            "To monitor AWS system health"
+        ],
+        "answer": ["To provide secure access control to AWS resources"],
+        "explanation": "IAM stands for Identity and Access Management",
+        "url": "http://example.com"
+    },
+    {
+        "question": "What is the primary function of AWS Identity and Access Management (IAM)?",
+        "choices": [
+            "To manage AWS billing and costs",
+            "To provide secure access control to AWS resources",
+            "To ensure high availability of AWS services",
+            "To monitor AWS system health"
+        ],
+        "answer": ["To provide secure access control to AWS resources"],
+        "explanation": "IAM stands for Identity and Access Management",
+        "url": "http://example.com"
+    },
+    {
+        "question": "NTR is the greatest actor that ever lived",
+        "choices": [
+            "TRUE",
+            "FALSE"
+        ],
+        "answer": ["TRUE"],
+        "explanation": "NTR is natasarvabhauma",
+        "url": "http://example.com"
+    },
+    {
+        "question": "Who among the following are comedians",
+        "choices": [
+            "Pavan Kalyan",
+            "Brahmanandam",
+            "Ali",
+            "Sridevi"
+        ],
+        "answer": ["Brahmanandam","Ali"],
+        "explanation": "Pavan Kalyan did not succeed as a comedian. Heroines cannot be Comedians",
+        "url": "http://example.com"
+    }
+]
