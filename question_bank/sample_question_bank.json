@@ -1,0 +1,62 @@
+{
+    "test_name": "Sample Test",
+    "questions": [
+    {
+        "question": "Is pluto a planet?",
+        "choices": [
+            "It is",
+            "It is not",
+            "It's actually a cartoon dog. <slaps knee and proceeds to guffaw>",
+            "It keeps changing as per the whims and fancies of thumb twiddling astronomers."
+        ],
+        "answer": ["It keeps changing as per the whims and fancies of thumb twiddling astronomers."],
+        "explanation": "I think the concept of Schrodinger's cat applies to this conundrum.",
+        "url": "https://en.wikipedia.org/wiki/Pluto"
+    },
+    {
+        "question": "Who is Naruto's son",
+        "choices": [
+            "Burrito",
+            "Ogami Itto",
+            "Oturan",
+            "None of the above"
+        ],
+        "answer": ["None of the above"],
+        "explanation": "Naruto's son is Boruto",
+        "url": "https://en.wikipedia.org/wiki/Boruto"
+    },
+    {
+        "question": "How many punches does One Punch Man throw to defeat his foes?",
+        "choices": [
+            "One",
+            "It depends",
+            "None",
+            "Is this some kind of a changing-bulb riddle?"
+        ],
+        "answer": ["One"],
+        "explanation": "Saitama also known as One Punch Man needs only one punch to defeat his foes. Unfortunately this super power makes him a side character in a show where he's supposed to be the protagonist. That's because there is not much story one can tell if the solution is going to be just one punch. That's why the show tends to focus more on other characters who have more interesting stories.",
+        "url": "https://en.wikipedia.org/wiki/One-Punch_Man"
+    },
+    {
+        "question": "Which of the following superheroes belongs to Marvel comics?",
+        "choices": [
+            "Superman",
+            "Iron Man",
+            "Spider Man/Spider-man/Spiderman",
+            "Tarzan"
+        ],
+        "answer": ["Iron Man", "Spider Man/Spider-man/Spiderman"],
+        "explanation": "Marvel Cinematic Universe is the epitome of cinema. Anyone who says otherwise is a whiny loser. /s",
+        "url": "https://en.wikipedia.org/wiki/Lists_of_Marvel_Comics_characters"
+    },
+    {
+        "question": "Wheels on the bus go round and round",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "answer": ["True"],
+        "explanation": "And the baby on the bus goes 'waa, waa, waa'",
+        "url": "http://myniecesaidso.com"
+    }
+]}
