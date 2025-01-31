@@ -47,10 +47,9 @@ test_selection_dropdown = dcc.Dropdown(
 
 blank_question_content = [
     html.Div(id="question_row", style={"display":"none"}),
-    # html.Div(id="choice_row", style={"display":"none"}),
     dbc.Checklist(id="answer_choices", style={"display":"none"}),
     dbc.Button(id="submit-btn", style={"display":"none"}),
-    html.Div(id="next-btn", style={"display":"none"}),
+    dbc.Button(id="next-btn", style={"display":"none"}),
     html.Div(id="explanation_row", style={"display":"none"}),
     html.Div(id="url_row", style={"display":"none"}),
 ]
@@ -58,7 +57,6 @@ blank_question_content = [
 
 question_content = [
     dbc.Row(id="question_row"),
-    # dbc.Row(id="choice_row"),
     dbc.Row([
         dbc.Checklist(id="answer_choices", style={"display":"block"})
     ]),
@@ -92,7 +90,6 @@ app.layout = html.Div([
     dcc.Store(id="question_bank"),
     dcc.Store(id="question_bank_length", data=0),
     dcc.Store(id="correct_answer", data=None)
-    # html.P(id="testing"), # for testing
 ])
 
 # Populating the question div
@@ -252,18 +249,6 @@ def submit_toggler(selected_choices):
     if selected_choices:
         return False
     return True
-
-
-
-
-# just for testing
-
-# @app.callback(
-#     Output("testing", "children"),
-#     Input("question_bank", "data")
-# )
-# def testing(question_bank):
-#     return str(question_bank)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
