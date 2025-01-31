@@ -1,48 +1,62 @@
-[
+{
+    "test_name": "Sample Test",
+    "questions": [
     {
-        "question": "What is the primary function of AWS Identity and Access Management (IAM)?",
+        "question": "Is pluto a planet?",
         "choices": [
-            "To manage AWS billing and costs",
-            "To provide secure access control to AWS resources",
-            "To ensure high availability of AWS services",
-            "To monitor AWS system health"
+            "It is",
+            "It is not",
+            "It's actually a cartoon dog. <slaps knee and proceeds to guffaw>",
+            "It keeps changing as per the whims and fancies of thumb twiddling astronomers."
         ],
-        "answer": ["To provide secure access control to AWS resources"],
-        "explanation": "IAM stands for Identity and Access Management",
-        "url": "http://example.com"
+        "answer": ["It keeps changing as per the whims and fancies of thumb twiddling astronomers."],
+        "explanation": "I think the concept of Schrodinger's cat applies to this conundrum.",
+        "url": "https://en.wikipedia.org/wiki/Pluto"
     },
     {
-        "question": "What is the primary function of AWS Identity and Access Management (IAM)?",
+        "question": "Who is Naruto's son",
         "choices": [
-            "To manage AWS billing and costs",
-            "To provide secure access control to AWS resources",
-            "To ensure high availability of AWS services",
-            "To monitor AWS system health"
+            "Burrito",
+            "Naruhito",
+            "Oturan",
+            "None of the above"
         ],
-        "answer": ["To provide secure access control to AWS resources"],
-        "explanation": "IAM stands for Identity and Access Management",
-        "url": "http://example.com"
+        "answer": ["None of the above"],
+        "explanation": "Naruto's son is Boruto",
+        "url": "https://en.wikipedia.org/wiki/Boruto"
     },
     {
-        "question": "NTR is the greatest actor that ever lived",
+        "question": "How many punches does One Punch Man throw to defeat his foes?",
         "choices": [
-            "TRUE",
-            "FALSE"
+            "One",
+            "It depends",
+            "None",
+            "Is this some kind of a changing-bulb riddle?"
         ],
-        "answer": ["TRUE"],
-        "explanation": "NTR is natasarvabhauma",
-        "url": "http://example.com"
+        "answer": ["One"],
+        "explanation": "Saitama also known as One Punch Man needs only one punch to defeat his foes. Unfortunately this super power makes him a side character in a show where he's supposed to be the protagonist. That's because there is not much story one can tell if the solution is going to be just one punch. That's why the show tends to focus more on other characters who have more interesting stories.",
+        "url": "https://en.wikipedia.org/wiki/One-Punch_Man"
     },
     {
-        "question": "Who among the following are comedians",
+        "question": "Which of the following superheroes belongs to Marvel comics?",
         "choices": [
-            "Pavan Kalyan",
-            "Brahmanandam",
-            "Ali",
-            "Sridevi"
+            "Superman",
+            "Iron Man",
+            "Spider Man/Spider-man/Spiderman",
+            "Tarzan"
         ],
-        "answer": ["Brahmanandam","Ali"],
-        "explanation": "Pavan Kalyan did not succeed as a comedian. Heroines cannot be Comedians",
-        "url": "http://example.com"
+        "answer": ["Iron Man", "Spider Man/Spider-man/Spiderman"],
+        "explanation": "Marvel Cinematic Universe is the epitome of cinema. Anyone who says otherwise is a whiny loser. /s",
+        "url": "https://en.wikipedia.org/wiki/Lists_of_Marvel_Comics_characters"
+    },
+    {
+        "question": "Wheels on the bus go round and round",
+        "choices": [
+            "True",
+            "False"
+        ],
+        "answer": ["True"],
+        "explanation": "And the baby on the bus goes 'waa, waa, waa'",
+        "url": "http://myniecesaidso.com"
     }
-]
+]}
