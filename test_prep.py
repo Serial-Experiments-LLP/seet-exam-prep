@@ -4,6 +4,15 @@ import random
 import os
 import json
 
+"""
+Change this value to limit the number of questions presented from a json file.
+For example if your json file has 200 questions but you want to revise only 50 of them
+at a time then you mention 50 below.
+
+0 and a number greater than the actual number of questions will show all questions in the json file.
+"""
+question_limit = 0
+
 app = Dash(__name__, external_stylesheets=[dbc.themes.SOLAR], suppress_callback_exceptions=True)
 
 def answer_processing(q_json):
@@ -25,10 +34,11 @@ for each_file in os.listdir("question_bank"):
         filepath = f"question_bank/{each_file}"
         with open(filepath, 'r', encoding='utf8') as f:
             json_data = json.load(f)
-        test_name = json_data['test_name']
-        test_options.append(
-            {"label":test_name, "value":filepath}
-        )
+        if "test_name" in json_data:
+            test_name = json_data['test_name']
+            test_options.append(
+                {"label":test_name, "value":filepath}
+            )
 
 navbar = dbc.NavbarSimple(
     brand="Test Prepper",
@@ -47,10 +57,9 @@ test_selection_dropdown = dcc.Dropdown(
 
 blank_question_content = [
     html.Div(id="question_row", style={"display":"none"}),
-    # html.Div(id="choice_row", style={"display":"none"}),
     dbc.Checklist(id="answer_choices", style={"display":"none"}),
     dbc.Button(id="submit-btn", style={"display":"none"}),
-    html.Div(id="next-btn", style={"display":"none"}),
+    dbc.Button(id="next-btn", style={"display":"none"}),
     html.Div(id="explanation_row", style={"display":"none"}),
     html.Div(id="url_row", style={"display":"none"}),
 ]
@@ -58,9 +67,12 @@ blank_question_content = [
 
 question_content = [
     dbc.Row(id="question_row"),
-    # dbc.Row(id="choice_row"),
     dbc.Row([
-        dbc.Checklist(id="answer_choices", style={"display":"block"})
+        dbc.Checklist(
+            id="answer_choices",
+            style={"display":"block"},
+            inputCheckedClassName="border border-success bg-success",
+        )
     ]),
     dbc.Row([
         dbc.Col([
@@ -83,7 +95,7 @@ app.layout = html.Div([
                 test_selection_dropdown
             ], width=4),
             dbc.Col([
-                dbc.Button("Start Test", id="start_test_button", color="primary", disabled=True)
+                dbc.Button("Start Test", id="start_test_button", color="success", disabled=True)
             ], width="auto"),
         ], className="mt-2"),
         html.Div(blank_question_content, id="question_div", className="mt-2"),
@@ -92,7 +104,6 @@ app.layout = html.Div([
     dcc.Store(id="question_bank"),
     dcc.Store(id="question_bank_length", data=0),
     dcc.Store(id="correct_answer", data=None)
-    # html.P(id="testing"), # for testing
 ])
 
 # Populating the question div
@@ -119,7 +130,7 @@ def question_div_populator(test_selection_dropdown_value, start_test_nclicks, qu
             return question_content
     elif component_id == "question_counter":
         if question_counter >= question_bank_length:
-            return [html.P("Awesome! You have completed the test.")]+blank_question_content
+            return [html.H2("Awesome! You have completed the test.", className="mt-4")]+blank_question_content
         else:
             return no_update
     else:
@@ -164,6 +175,11 @@ def background_data_manager(start_test_button_clicks, test_selection_dropdown_va
             json_data = json.load(f)
         question_bank = json_data['questions']
         random.shuffle(question_bank)
+
+        # if there is a limit mentioned then restrict the number of questions as per limit
+        if question_limit > 0 and question_limit < len(question_bank):
+            question_bank = question_bank[:question_limit]
+        
         question_bank_length = len(question_bank)
         return 0, question_bank, question_bank_length
     elif component_id == "next-btn":
@@ -187,6 +203,7 @@ def background_data_manager(start_test_button_clicks, test_selection_dropdown_va
     State("answer_choices", "value"),
 )
 def single_question_populator(question_counter, submit_button_clicks, question_bank, question_bank_length, selected_choices):
+    
     if question_counter>=question_bank_length or not question_bank:
         return no_update
     
@@ -252,18 +269,6 @@ def submit_toggler(selected_choices):
     if selected_choices:
         return False
     return True
-
-
-
-
-# just for testing
-
-# @app.callback(
-#     Output("testing", "children"),
-#     Input("question_bank", "data")
-# )
-# def testing(question_bank):
-#     return str(question_bank)
 
 if __name__ == '__main__':
     app.run_server(debug=True)

@@ -1,0 +1,17 @@
+Given the INPUT TEXT please generate 2 multiple choice questions along with an explanation for the correct answer. Please give your response in the following json format.
+
+```
+{
+    "question": "a sample question?",
+    "choices": [
+		"random choice",
+		"random choice",
+		"random choice",
+		"random choice"
+    ],
+    "answer": ["a random answer"],
+    "explanation": "explanation to the answer"
+}
+```
+
+INPUT TEXT:
